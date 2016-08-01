@@ -1,5 +1,5 @@
 # augtut
-Node JS project
+MEAN stack project
 
 #INSTALL
 yeoman
