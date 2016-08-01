@@ -3,4 +3,7 @@ export class MainController {
     'ngInject';
 
   }
+  postMessage(){
+    console.log("post");
+  }
 }
