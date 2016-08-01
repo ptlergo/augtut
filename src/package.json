@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ptlergo/augtut/issues"
   },
-  "homepage": "https://github.com/ptlergo/augtut#readme"
+  "homepage": "https://github.com/ptlergo/augtut#readme",
+  "dependencies": {
+    "express": "4.14.0"
+  }
 }
