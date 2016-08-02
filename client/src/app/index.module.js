@@ -19,5 +19,6 @@ angular.module('myMessageFront', ['ui.router', 'ui.bootstrap', 'toastr'])
   .service('githubContributor', GithubContributorService)
   .service('webDevTec', WebDevTecService)
   .controller('MainController', MainController)
+  .controller('AuthController', AuthController)
   .directive('acmeNavbar', NavbarDirective)
   .directive('acmeMalarkey', MalarkeyDirective);
