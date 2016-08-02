@@ -25,6 +25,8 @@ app.post('/api/message', (req, res) => {
 mongo.connect("mongodb://localhost:27017/test", (err, db) => {
   if(!err){
     console.log("db connected!");
+    //create a collection of name messages
+    db.collection('messages').insertOne({'msg': 'test'});
   }
 })
 
