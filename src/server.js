@@ -3,6 +3,8 @@ const app = express();
 const bodyParser = require('body-parser');
 const mongo = require('mongodb').MongoClient;
 
+let database;
+
 //parse body of json
 app.use(bodyParser.json());
 
@@ -18,6 +20,9 @@ app.use((req, res, next) =>{
 
 app.post('/api/message', (req, res) => {
   console.log(req.body);
+
+  //create a collection of name messages. store body in collection
+  database.collection('messages').insertOne(req.body);
   res.status(200);
 
 })
@@ -25,8 +30,9 @@ app.post('/api/message', (req, res) => {
 mongo.connect("mongodb://localhost:27017/test", (err, db) => {
   if(!err){
     console.log("db connected!");
-    //create a collection of name messages
-    db.collection('messages').insertOne({'msg': 'test'});
+
+    database = db;
+
   }
 })
 
