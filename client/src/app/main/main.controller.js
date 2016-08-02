@@ -9,8 +9,10 @@ export class MainController {
 
   //display message
   getMessages() {
+    // save this for the promise as the callback will be used
+    const vm = this;
     this.$http.get('http://localhost:5000/api/message').then((result) => {
-      console.log(result);
+      vm.messages = result.data;
     });
 
 
