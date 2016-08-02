@@ -8,7 +8,7 @@ export class MainController {
 
   postMessage() {
 
-    //implemment CORS
+    //implemment CORS to send access to NODE server
     this.$http.post('http://localhost:5000/api/message',{msg: 'hello'});
   }
 }

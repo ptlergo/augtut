@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 //parse body of json
 app.use(bodyParser.json());
 
-//custom middleware CORS
+//custom middleware CORS allowing access anywhere
 app.use((req, res, next) =>{
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
