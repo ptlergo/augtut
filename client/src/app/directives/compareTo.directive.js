@@ -12,7 +12,7 @@ export function CompareToDirective($parse) {
       });
 
       //watch for changes to new password input model then compare validity
-      scope.$watch(attrs.ngModel, (newValue) => {
+      scope.$watch(attrs.compareTo, (newValue) => {
         ngModel.$setValidity(attrs.name, newValue === secondModel(scope));
       });
     }
