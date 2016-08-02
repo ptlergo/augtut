@@ -4,7 +4,6 @@ const bodyParser = require('body-parser');
 const mongo = require('mongodb').MongoClient;
 const mongoose = require('mongoose');
 
-let database;
 //create mongoose schema
 const Message = mongoose.model('Message',{
     msg: String
@@ -32,13 +31,18 @@ app.post('/api/message', (req, res) => {
 
 })
 
-mongoose.connect("mongodb://localhost:27017/test", (err, db) => {
-  if(!err){
-    console.log("db connected!");
-
-    database = db;
-
+  function GetMessages(){
+    Message.find({}).exec((err, result) => {
+      console.log(result);
+    })
   }
+
+  mongoose.connect("mongodb://localhost:27017/test", (err) => {
+    if(!err){
+      console.log("db connected!");
+      GetMessages();
+
+    }
 })
 
 const server = app.listen(5000, () => {
