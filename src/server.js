@@ -22,6 +22,10 @@ app.use((req, res, next) =>{
 
 })
 
+//messages display route
+app.get('/api/message', GetMessages);
+
+//new message object instantiated from client
 app.post('/api/message', (req, res) => {
   console.log(req.body);
 
@@ -31,18 +35,18 @@ app.post('/api/message', (req, res) => {
 
 })
 
-  function GetMessages(){
-    Message.find({}).exec((err, result) => {
-      console.log(result);
-    })
+//will handle req and res
+function GetMessages(req, res){
+  Message.find({}).exec((err, result) => {
+    res.send(result);
+  })
+}
+
+mongoose.connect("mongodb://localhost:27017/test", (err) => {
+  if(!err){
+    console.log("db connected!");
+
   }
-
-  mongoose.connect("mongodb://localhost:27017/test", (err) => {
-    if(!err){
-      console.log("db connected!");
-      GetMessages();
-
-    }
 })
 
 const server = app.listen(5000, () => {
