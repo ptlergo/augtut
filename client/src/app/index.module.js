@@ -21,6 +21,6 @@ angular.module('myMessageFront', ['ui.router', 'ui.bootstrap', 'toastr'])
   .service('webDevTec', WebDevTecService)
   .controller('MainController', MainController)
   .controller('AuthController', AuthController)
-  .directive('CompareTo', CompareToDirective)
+  .directive('compareTo', CompareToDirective)
   .directive('acmeNavbar', NavbarDirective)
   .directive('acmeMalarkey', MalarkeyDirective);
