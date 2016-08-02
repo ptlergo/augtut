@@ -1,6 +1,6 @@
-export function compareToDirective($parse) {
+export function CompareToDirective($parse) {
   'ngInject'
   return {
-    
+
   }
 }
