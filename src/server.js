@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
+const mongo = require('mongodb').MongoClient;
 
 //parse body of json
 app.use(bodyParser.json());
@@ -19,6 +20,12 @@ app.post('/api/message', (req, res) => {
   console.log(req.body);
   res.status(200);
 
+})
+
+mongo.connect("mongodb://localhost:27017/test", (err, db) => {
+  if(!err){
+    console.log("db connected!");
+  }
 })
 
 const server = app.listen(5000, () => {
